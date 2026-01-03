@@ -13,10 +13,10 @@ const PostItem = ({ post }: Props) => {
 
     return (
         <Link to={`/post/${post.id}`}>
-            <div className="bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 hover:shadow-xl hover:shadow-black/50 transition-all duration-300 w-full max-w-sm backdrop-blur-sm">
+            <div className="bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 hover:shadow-xl hover:shadow-black/50 transition-all duration-300 h-full flex flex-col backdrop-blur-sm">
                 {/* Image */}
                 {post.image_url && (
-                    <div className="w-full aspect-square bg-linear-to-br from-slate-800 to-slate-900 overflow-hidden relative group">
+                    <div className="w-full aspect-video bg-linear-to-br from-slate-800 to-slate-900 overflow-hidden relative group">
                         <img 
                             src={post.image_url} 
                             alt={post.title} 
