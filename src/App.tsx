@@ -11,6 +11,7 @@ import MessagesPage from './pages/MessagesPage.tsx'
 import EventsPage from './pages/EventsPage.tsx'
 import EventDetailPage from './pages/EventDetailPage.tsx'
 import CreateEventPage from './pages/CreateEventPage.tsx'
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }
