@@ -1,15 +1,15 @@
 
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext';
-import { useTheme } from '../context/ThemeContext';
-import { Code2, Menu, X, MessageSquare, Sun, Moon } from 'lucide-react';
+import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme';
+import { Code2, Menu, X, MessageSquare, Calendar, Sun, Moon } from 'lucide-react';
 import MessageNotificationBadge from './MessageNotificationBadge';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { theme, toggleTheme } = useTheme();
-    const { signInWithGithub, signOut, user, isLoading } = useAuth();
+    const { signOut, user } = useAuth();
 
     const displayName = user?.user_metadata?.full_name || user?.user_metadata?.user_name || user?.email;
     
@@ -29,6 +29,10 @@ const Navbar = () => {
                 <Link to="/create" className="font-mono text-sm text-gray-300 hover:text-cyan-400 transition duration-200">~/create</Link>
                 <Link to="/communities" className="font-mono text-sm text-gray-300 hover:text-cyan-400 transition duration-200">~/communities</Link>
                 <Link to="/communities/create" className="font-mono text-sm text-gray-300 hover:text-cyan-400 transition duration-200">~/new-community</Link>
+                <Link to="/events" className="font-mono text-sm text-gray-300 hover:text-cyan-400 transition duration-200 relative flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    ~/events
+                </Link>
                 <Link to="/messages" className="font-mono text-sm text-gray-300 hover:text-cyan-400 transition duration-200 relative flex items-center gap-1">
                     <MessageSquare className="w-4 h-4" />
                     ~/messages
@@ -105,6 +109,10 @@ const Navbar = () => {
               <Link to="/create" className="block px-4 py-2 font-mono text-sm text-gray-300 hover:text-cyan-400 hover:bg-cyan-900/20 rounded transition">~/create</Link>
               <Link to="/communities" className="block px-4 py-2 font-mono text-sm text-gray-300 hover:text-cyan-400 hover:bg-cyan-900/20 rounded transition">~/communities</Link>
               <Link to="/communities/create" className="block px-4 py-2 font-mono text-sm text-gray-300 hover:text-cyan-400 hover:bg-cyan-900/20 rounded transition">~/new-community</Link>
+              <Link to="/events" className="block px-4 py-2 font-mono text-sm text-gray-300 hover:text-cyan-400 hover:bg-cyan-900/20 rounded transition relative flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
+                ~/events
+              </Link>
               <Link to="/messages" className="flex px-4 py-2 font-mono text-sm text-gray-300 hover:text-cyan-400 hover:bg-cyan-900/20 rounded transition relative items-center gap-2">
                 <MessageSquare className="w-4 h-4" />
                 ~/messages

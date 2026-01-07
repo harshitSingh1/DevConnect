@@ -1,4 +1,4 @@
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from '../hooks/useAuth';
 import { useNavigate } from "react-router";
 import { User, Mail, Calendar, Shield } from "lucide-react";
 import { format } from "date-fns";
